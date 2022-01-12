@@ -5,6 +5,7 @@ import Image from 'next/image'
 import styled, { css } from 'styled-components'
 import pic from '../images/hero.jpg'
 import { current } from '@reduxjs/toolkit'
+import Accordion from '../components/Accordion'
 
 // const Button = styled.button`
 //   background: transparent;
@@ -33,26 +34,30 @@ export default function Home() {
         Welcome Back
       </h1>
       {/* Image */}
-      {/* <div className='flex justify-center items-center my-16 rounded'>
+      <div className='flex justify-center items-center my-16 rounded'>
         <Image
           className='transparent rounded-md'
           width={500}
           height={300}
           src={pic}
         />
-      </div> */}
+      </div>
       {/* end Image */}
+      {/* Buttons */}
       <div className='container mx-auto flex justify-center items-center my-20'>
-        {/* <Button>Button</Button>
-        <Button primary>Button</Button> */}
         <button className='btn btn-primary'>Button</button>
         <button className='text-[palevioletred] border border-[palevioletred] hover:bg-[palevioletred] hover:text-white text-white font-bold py-2 px-4 h-fit rounded-full'>
           Button
         </button>
-        <button type='button' className='btn gradient-blue gradient-hover'>
+        <button
+          type='button'
+          className='btn gradient-blue gradient-hover ease-out duration-500'
+        >
           Hover me
         </button>
-        <Button variant='contained'>Materiaul UI</Button>
+        <Button variant='contained' sx={{ background: 'blue' }}>
+          Materiaul UI
+        </Button>
       </div>
       {/* end Hero */}
     </div>

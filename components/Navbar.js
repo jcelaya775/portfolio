@@ -9,12 +9,17 @@ import { CgLogOff } from 'react-icons/cg'
 
 export default function Navbar() {
   const dispatch = useDispatch()
+  const toggleContainerRef = useRef()
   const toggleRef = useRef()
+  const burgerRef = useRef()
 
   useEffect(() => {
-    const toggle = toggleRef.current
+    const toggle = toggleContainerRef.current
+    const burger = burgerRef.current
 
     toggle.addEventListener('click', onClick)
+    burger.addEventListener('mouseenter', mouseEnter)
+    burger.addEventListener('mouseleave', mouseLeave)
 
     return () => {
       toggle.removeEventListener('click', onClick)
@@ -23,8 +28,6 @@ export default function Navbar() {
 
   const onClick = (event) => {
     event.preventDefault()
-    console.log('clicked')
-    console.log(toggleRef.current.classList)
 
     if (!toggleRef.current.classList.contains('dark')) {
       console.log('dark mode activated!')
@@ -41,6 +44,26 @@ export default function Navbar() {
     }
   }
 
+  const mouseEnter = (event) => {
+    event.preventDefault()
+    const [b1, b2, b3] = document.querySelectorAll('.block')
+
+    b1.classList.remove('w-5')
+    b1.classList.add('w-8')
+    b3.classList.remove('w-8')
+    b3.classList.add('w-5')
+  }
+
+  const mouseLeave = (event) => {
+    event.preventDefault()
+    const [b1, b2, b3] = document.querySelectorAll('.block')
+
+    b1.classList.remove('w-8')
+    b1.classList.add('w-5')
+    b3.classList.remove('w-5')
+    b3.classList.add('w-8')
+  }
+
   return (
     <div className='w-full h-16 gradient-blue drop-shadow-2xl flex justify-center items-center px-10'>
       {/* Navbar items */}
@@ -50,32 +73,32 @@ export default function Navbar() {
           {/* Logo */}
           {/* <CgLogOff className='w-10 h-10 text-white' /> */}
           {/* Hamburger */}
-          <div className='space-y-2 rounded-md'>
-            <span className='block w-5 h-[0.20rem] bg-white'></span>
-            <span className='block w-8 h-[0.20rem] bg-white'></span>
-            <span className='block w-8 h-[0.20rem] bg-white'></span>
+          <div ref={burgerRef} className='space-y-2 rounded-md p-6'>
+            <span className='block w-5 h-[0.20rem] bg-white ease-out duration-500'></span>
+            <span className='block w-8 h-[0.20rem] bg-white ease-out duration-500'></span>
+            <span className='block w-8 h-[0.20rem] bg-white ease-out duration-500'></span>
           </div>
         </div>
         {/* end Hamburger and Logo Section */}
         {/* Links */}
         <div className='container flex justify-center font-prompt text-white sm:visible invisible'>
           <Link href='#' passHref>
-            <a className='link px-4 py-2 text-lg hover:translate-y-[-3px] duration-300 ease-in-out hover:bg-slate-600 hover:bg-opacity-25 hover:to-transparent rounded-md'>
+            <a className='link px-4 py-2 text-lg  duration-500 ease-in-out hover:bg-slate-600 hover:bg-opacity-50 hover:to-transparent rounded-md'>
               Home
             </a>
           </Link>
           <Link href='#' passHref>
-            <a className='link px-4 py-2 text-lg hover:translate-y-[-3px] duration-300 hover:bg-slate-600 hover:bg-opacity-25 hover:to-transparent rounded-md'>
+            <a className='link px-4 py-2 text-lg  duration-500 hover:bg-slate-600 hover:bg-opacity-50 hover:to-transparent rounded-md'>
               About
             </a>
           </Link>
           <Link href='#' passHref>
-            <a className='link px-4 py-2 text-lg hover:translate-y-[-3px] duration-300 hover:bg-slate-600 hover:bg-opacity-25 hover:to-transparent rounded-md'>
+            <a className='link px-4 py-2 text-lg  duration-500 hover:bg-slate-600 hover:bg-opacity-50 hover:to-transparent rounded-md'>
               Projects
             </a>
           </Link>
           <Link href='#' passHref>
-            <a className='link px-4 py-2 text-lg hover:translate-y-[-3px] duration-300 hover:bg-slate-600 hover:bg-opacity-25 hover:to-transparent rounded-md'>
+            <a className='link px-4 py-2 text-lg  duration-500 hover:bg-slate-600 hover:bg-opacity-50 hover:to-transparent rounded-md'>
               Testimonials
             </a>
           </Link>
@@ -83,10 +106,13 @@ export default function Navbar() {
         {/* end Links */}
         {/* Theme Toggle */}
         {/* bg-slate-200 hover:opacity:20 */}
-        <div className='w-[4rem] h-10 bg-[#03024b] dark:bg-black rounded-full flex items-center justify-start pl-[0.21rem]'>
+        <div
+          ref={toggleContainerRef}
+          className='w-[4rem] h-10 bg-[#03024b] dark:bg-black rounded-full flex items-center pl-[0.21rem]'
+        >
           <div
             ref={toggleRef}
-            className='w-7 h-7 rounded-full bg-green-600 flex justify-center items-center ease-in-out duration-200'
+            className='w-7 h-7 rounded-full bg-green-600 flex justify-center items-center ease-in-out duration-300'
           >
             {/* text-[#03024b] */}
             {/* <WiDaySunny className='w-5 h-5 text- text-[#fff] text-transparent' /> */}
