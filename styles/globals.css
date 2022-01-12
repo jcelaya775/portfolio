@@ -45,7 +45,7 @@
   @apply hover:from-pink-500 hover:to-yellow-500;
 }
 
-#links {
+.link {
   text-decoration: none;
   color: white;
 }
