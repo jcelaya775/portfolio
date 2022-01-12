@@ -7,8 +7,11 @@ module.exports = {
     extend: {
       fontFamily: {
         robo: ['Roboto Condensed', 'sans-serif'],
-      }
+        lato: ['Lato', 'sans-serif'],
+        prompt: ['Prompt', 'sans-serif'],
+      },
     },
   },
   plugins: [],
+  darkMode: true,
 }

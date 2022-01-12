@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Prompt:wght@400;800&family=Roboto:wght@300&display=swap');
 
 @tailwind base;
 
@@ -33,12 +33,19 @@
   @apply bg-[#45b3e7] text-white;
 }
 
-.gradient {
+.gradient-blue {
   @apply bg-gradient-to-r from-green-400 to-blue-500;
 }
 
-.gradient-blue {}
+.gradient-orange {
+  @apply bg-gradient-to-r from-pink-500 to-yellow-500;
+}
 
 .gradient-hover {
   @apply hover:from-pink-500 hover:to-yellow-500;
+}
+
+#links {
+  text-decoration: none;
+  color: white;
 }

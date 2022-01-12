@@ -1,9 +1,10 @@
-import { useSelector } from 'react-redux';
-import Navbar from '../components/Navbar';
-import Image from 'next/image';
-import styled, { css } from 'styled-components';
-import pic from '../images/hero.jpg';
-import { current } from '@reduxjs/toolkit';
+import { useSelector } from 'react-redux'
+import Navbar from '../components/Navbar'
+import Button from '@mui/material/Button'
+import Image from 'next/image'
+import styled, { css } from 'styled-components'
+import pic from '../images/hero.jpg'
+import { current } from '@reduxjs/toolkit'
 
 // const Button = styled.button`
 //   background: transparent;
@@ -22,7 +23,7 @@ import { current } from '@reduxjs/toolkit';
 // `
 
 export default function Home() {
-  const theme = useSelector((state) => state.theme.value);
+  const theme = useSelector((state) => state.theme.value)
 
   return (
     <div className='w-screen h-screen bg-[#001325]'>
@@ -48,11 +49,12 @@ export default function Home() {
         <button className='text-[palevioletred] border border-[palevioletred] hover:bg-[palevioletred] hover:text-white text-white font-bold py-2 px-4 h-fit rounded-full'>
           Button
         </button>
-        <button type='button' className='btn gradient gradient-hover'>
+        <button type='button' className='btn gradient-blue gradient-hover'>
           Hover me
         </button>
+        <Button variant='contained'>Materiaul UI</Button>
       </div>
       {/* end Hero */}
     </div>
-  );
+  )
 }
