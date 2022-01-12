@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -12,6 +14,8 @@ module.exports = {
       },
     },
   },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
   plugins: [],
-  darkMode: true,
 }

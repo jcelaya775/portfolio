@@ -46,7 +46,7 @@ export default function Home() {
       {/* Buttons */}
       <div className='container mx-auto flex justify-center items-center my-20'>
         <button className='btn btn-primary'>Button</button>
-        <button className='text-[palevioletred] border border-[palevioletred] hover:bg-[palevioletred] hover:text-white text-white font-bold py-2 px-4 h-fit rounded-full'>
+        <button className='text-[palevioletred] border border-[palevioletred] hover:bg-[palevioletred] hover:text-white font-bold py-2 px-4 h-fit rounded-full'>
           Button
         </button>
         <button

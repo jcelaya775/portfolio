@@ -1,15 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Prompt:wght@400;800&family=Roboto:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Prompt:wght@400;800&family=Roboto:wght@300&display=swap');
+
 @tailwind base;
+
 @layer base {
   h1 {
     @apply text-2xl;
   }
+
   h2 {
     @apply text-xl;
   }
+
   h3 {
     @apply text-lg;
   }
+
   a {
     @apply text-blue-600 underline;
   }
@@ -17,6 +22,7 @@
 
 @tailwind components;
 @tailwind utilities;
+
 /* #DB7093 */
 /* bg-transparent border-2 border-[#45b3e7] text-[#45b3e7]*/
 .btn {
@@ -43,4 +49,3 @@
   text-decoration: none;
   color: white;
 }
-/*# sourceMappingURL=globals.css.map */
