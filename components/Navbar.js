@@ -7,6 +7,7 @@ import { WiDaySunny } from 'react-icons/wi'
 import { MdNightlightRound } from 'react-icons/md'
 import { FaBeer } from 'react-icons/fa'
 import { CgLogOff } from 'react-icons/cg'
+import { MdOutlineClose } from 'react-icons/md'
 
 export default function Navbar() {
   const [sidebar, setSidebar] = useState(false)
@@ -19,20 +20,20 @@ export default function Navbar() {
     const toggle = toggleContainerRef.current
     const burger = burgerRef.current
 
-    toggle.addEventListener('click', onClick)
+    toggle.addEventListener('click', handleTheme)
     burger.addEventListener('mouseenter', mouseEnter)
-    burger.addEventListener('click', mouseClick)
+    burger.addEventListener('click', handleBurgerClick)
     burger.addEventListener('mouseleave', mouseLeave)
 
     return () => {
-      toggle.removeEventListener('click', onClick)
+      toggle.removeEventListener('click', handleTheme)
       burger.removeEventListener('mouseenter', mouseEnter)
-      burger.removeEventListener('click', mouseClick)
+      burger.removeEventListener('click', handleBurgerClick)
       burger.removeEventListener('mouseleave', mouseLeave)
     }
   }, [])
 
-  const onClick = (event) => {
+  const handleTheme = (event) => {
     event.preventDefault()
 
     if (!toggleRef.current.classList.contains('dark')) {
@@ -41,46 +42,58 @@ export default function Navbar() {
       toggleRef.current.classList.remove('bg-green-600')
       toggleRef.current.classList.add('bg-red-600')
       toggleRef.current.classList.add('ml-[1.4rem]')
+      // set state
     } else {
       console.log('dark mode deactivated!')
       toggleRef.current.classList.remove('dark')
       toggleRef.current.classList.remove('bg-red-600')
       toggleRef.current.classList.add('bg-green-600')
       toggleRef.current.classList.remove('ml-[1.4rem]')
+      // set state
     }
   }
 
   const mouseEnter = (event) => {
     event.preventDefault()
-    const [b1, b2, b3] = document.querySelectorAll('.block')
 
-    b1.classList.remove('w-5')
-    b1.classList.add('w-8')
-    b3.classList.remove('w-8')
-    b3.classList.add('w-5')
-  }
-
-  const mouseClick = (event) => {
-    // event.preventDefault()
     console.log(sidebar)
 
-    setSidebar(prev => !prev)
+    if (!sidebar) {
+      const [b1, b2, b3] = document.querySelectorAll('.block')
+
+      b1.classList.remove('w-5')
+      b1.classList.add('w-8')
+      b3.classList.remove('w-8')
+      b3.classList.add('w-5')
+    }
   }
 
   const mouseLeave = (event) => {
     event.preventDefault()
-    const [b1, b2, b3] = document.querySelectorAll('.block')
 
-    b1.classList.remove('w-8')
-    b1.classList.add('w-5')
-    b3.classList.remove('w-5')
-    b3.classList.add('w-8')
+    if (!sidebar) {
+      console.log('mouse leave on burger')
+      // if sidebar not enabled -> animate burger
+      const [b1, b2, b3] = document.querySelectorAll('.block')
+
+      b1.classList.remove('w-8')
+      b1.classList.add('w-5')
+      b3.classList.remove('w-5')
+      b3.classList.add('w-8')
+    }
+  }
+
+  const handleBurgerClick = (event) => {
+    event.preventDefault()
+    const burger = burgerRef.current
+
+    setSidebar((prev) => !prev)
   }
 
   return (
     <div>
-      {sidebar ? <Sidebar /> : ''}
-      <div className='w-full h-16 gradient-blue drop-shadow-2xl flex justify-center items-center px-10'>
+      {sidebar && <Sidebar />}
+      <div className='{"mt-20"} z-2 w-full h-16 gradient-blue drop-shadow-2xl flex justify-center items-center px-10'>
         {/* Navbar items */}
         <div className='container flex justify-center items-center lg:max-w-screen-2xl sm:max-w-screen-md max-w-xs'>
           {/* Hamburger and Logo Container */}
@@ -88,11 +101,23 @@ export default function Navbar() {
             {/* Logo */}
             {/* <CgLogOff className='w-10 h-10 text-white' /> */}
             {/* Hamburger */}
-            <div ref={burgerRef} className='space-y-2 rounded-md p-6'>
-              <span className='block w-5 h-[0.20rem] bg-white ease-out duration-500'></span>
-              <span className='block w-8 h-[0.20rem] bg-white ease-out duration-500'></span>
-              <span className='block w-8 h-[0.20rem] bg-white ease-out duration-500'></span>
-            </div>
+            {!sidebar ? (
+              <div
+                ref={burgerRef}
+                className='space-y-2 rounded-md p-6 hover:cursor-pointer'
+              >
+                <span className='block w-5 h-[0.20rem] bg-white ease-out duration-500'></span>
+                <span className='block w-8 h-[0.20rem] bg-white ease-out duration-500'></span>
+                <span className='block w-8 h-[0.20rem] bg-white ease-out duration-500'></span>
+              </div>
+            ) : (
+              <div
+                ref={burgerRef}
+                className='p-6 ease-out hover:cursor-pointer hover:animate-spin delay-500 duration-200'
+              >
+                <MdOutlineClose id='exit' className='text-white w-10 h-10' />
+              </div>
+            )}
           </div>
           {/* end Hamburger and Logo Section */}
           {/* Links */}
@@ -123,7 +148,7 @@ export default function Navbar() {
           {/* bg-slate-200 hover:opacity:20 */}
           <div
             ref={toggleContainerRef}
-            className='w-[4rem] h-10 mx-2 bg-[#03024b] dark:bg-black rounded-full flex items-center pl-[0.21rem]'
+            className='w-[4rem] h-10 mx-2 bg-[#03024b] dark:bg-black rounded-full flex items-center pl-[0.21rem] hover:cursor-pointer'
           >
             <div
               ref={toggleRef}

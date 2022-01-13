@@ -14,6 +14,7 @@ module.exports = {
       },
     },
   },
+  darkMode: 'class',
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
