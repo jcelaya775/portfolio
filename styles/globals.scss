@@ -24,9 +24,9 @@
 @tailwind utilities;
 
 /* #DB7093 */
-/* bg-transparent border-2 border-[#45b3e7] text-[#45b3e7]*/
+/* bg-transparent border-2 border-[#45b3e7] text-[#45b3e7] my-[0.5em]*/
 .btn {
-  @apply text-white font-bold rounded-[4px] my-[0.5em] mx-[1em] py-[0.5em] px-[1em];
+  @apply text-white font-bold rounded-[4px]  mx-[1em] py-[0.5em] px-[1em];
 }
 
 .btn-primary {

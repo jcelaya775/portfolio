@@ -1,11 +1,12 @@
-import { useSelector } from 'react-redux'
-import Navbar from '../components/Navbar'
-import Button from '@mui/material/Button'
-import Image from 'next/image'
-import styled, { css } from 'styled-components'
-import pic from '../images/hero.jpg'
-import { current } from '@reduxjs/toolkit'
-import Accordion from '../components/Accordion'
+import { useSelector } from 'react-redux';
+import Navbar from '../components/Navbar';
+import Item from '../components/Item';
+import Button from '@mui/material/Button';
+import Image from 'next/image';
+import styled, { css } from 'styled-components';
+import pic from '../images/hero.jpg';
+import { current } from '@reduxjs/toolkit';
+import Accordion from '../components/Accordion';
 
 // const Button = styled.button`
 //   background: transparent;
@@ -24,7 +25,7 @@ import Accordion from '../components/Accordion'
 // `
 
 export default function Home() {
-  const theme = useSelector((state) => state.theme.value)
+  const theme = useSelector((state) => state.theme.value);
 
   return (
     // bg-[#001325]
@@ -46,8 +47,7 @@ export default function Home() {
       <div className='container mx-auto flex justify-center items-center my-20'>
         <button
           type='button'
-          className='btn gradient-blue gradient-hover ease-out duration-500'
-        >
+          className='btn gradient-blue gradient-hover ease-out duration-500'>
           Contact Us
         </button>
         {/* <Button variant='contained' sx={{ background: 'blue' }}>
@@ -55,6 +55,13 @@ export default function Home() {
         </Button> */}
       </div>
       {/* end Hero */}
+      {/* Content */}
+      <div className='container mx-auto max-w-screen-xl mt-56 grid grid-cols-4 grid'>
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+      </div>
     </div>
-  )
+  );
 }
