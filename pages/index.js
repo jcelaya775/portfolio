@@ -28,8 +28,8 @@ export default function Home() {
   const theme = useSelector((state) => state.theme.value);
 
   return (
-    // bg-[#001325]
-    <div className='w-screen h-screen bg-zinc-900'>
+    <body className='bg-zinc-900'>
+      {/* // bg-[#001325] */}
       <Navbar />
       {/* Hero */}
       <h1 className='text-6xl text-center font-robo font-bold pt-20 text-white'>
@@ -56,12 +56,12 @@ export default function Home() {
       </div>
       {/* end Hero */}
       {/* Content */}
-      <div className='container mx-auto max-w-screen-xl mt-56 grid grid-cols-4 grid'>
+      <div className='container mx-auto max-w-screen-xl pt-56 pb-20 grid grid-cols-4 grid'>
         <Item />
         <Item />
         <Item />
         <Item />
       </div>
-    </div>
+    </body>
   );
 }
