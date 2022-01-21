@@ -1,30 +1,30 @@
-import React, { useState, useRef, useEffect } from 'react'
-import Sidebar from './Sidebar'
-import Link from 'next/link'
-import Switch from './Switch'
-import { useSelector, useDispatch } from 'react-redux'
-import { MdOutlineClose } from 'react-icons/md'
+import React, { useState, useRef, useEffect } from 'react';
+import Sidebar from './Sidebar';
+import Link from 'next/link';
+import Switch from './Switch';
+import { useSelector, useDispatch } from 'react-redux';
+import { MdOutlineClose } from 'react-icons/md';
 
 export default function Navbar() {
-  const [sidebar, setSidebar] = useState(false)
-  const dispatch = useDispatch()
-  const burgerRef = useRef()
+  const [sidebar, setSidebar] = useState(false);
+  const dispatch = useDispatch();
+  const burgerRef = useRef();
 
   useEffect(() => {
-    const burger = burgerRef.current
-    burger.addEventListener('click', burgerClick)
+    const burger = burgerRef.current;
+    burger.addEventListener('click', burgerClick);
 
     return () => {
-      burger.removeEventListener('click', burgerClick)
-    }
-  }, [])
+      burger.removeEventListener('click', burgerClick);
+    };
+  }, []);
 
   const burgerClick = (event) => {
-    event.preventDefault()
-    const burger = burgerRef.current
+    event.preventDefault();
+    const burger = burgerRef.current;
 
-    setSidebar((prev) => !prev)
-  }
+    setSidebar((prev) => !prev);
+  };
 
   return (
     <div>
@@ -40,8 +40,7 @@ export default function Navbar() {
             {!sidebar ? (
               <div
                 ref={burgerRef}
-                className='space-y-2 rounded-md p-6 hover:cursor-pointer group'
-              >
+                className='space-y-2 rounded-md p-6 hover:cursor-pointer group'>
                 <span className='block w-8 group-hover:w-5 h-[0.20rem] bg-white ease-out duration-500'></span>
                 <span className='block w-8 h-[0.20rem] bg-white ease-out duration-500'></span>
                 <span className='block w-5 group-hover:w-8 h-[0.20rem] bg-white ease-out duration-500'></span>
@@ -49,8 +48,7 @@ export default function Navbar() {
             ) : (
               <div
                 ref={burgerRef}
-                className='p-6 ease-out hover:cursor-pointer hover:animate-spin-slow duration-500'
-              >
+                className='p-6 ease-out hover:cursor-pointer hover:animate-spin-slow duration-500'>
                 <MdOutlineClose id='exit' className='text-white w-10 h-10' />
               </div>
             )}
@@ -87,5 +85,5 @@ export default function Navbar() {
         {/* end Navbar items */}
       </div>
     </div>
-  )
+  );
 }
