@@ -1,35 +1,16 @@
 import { useSelector } from 'react-redux'
 import Navbar from '../components/Navbar'
 import Card from '../components/Card'
-import Button from '@mui/material/Button'
 import Image from 'next/image'
+import Footer from '../components/Footer'
 import styled, { css } from 'styled-components'
 import img from '../images/hero.jpg'
-import { current } from '@reduxjs/toolkit'
-import Accordion from '../components/Accordion'
-
-// const Button = styled.button`
-//   background: transparent;
-//   border-radius: 3px;
-//   border: 2px solid palevioletred;
-//   color: palevioletred;
-//   margin: 0.5em 1em;
-//   padding: 0.25em 1em;
-
-//   ${(props) =>
-//     props.primary &&
-//     css`=
-//       background: palevioletred;
-//       color: white;
-//     `}
-// `
 
 export default function Home() {
   const theme = useSelector((state) => state.theme.value)
 
   return (
     <div>
-      {/* // bg-[#001325] */}
       <Navbar />
       {/* Hero */}
       <div className='bg-slate-100'>
@@ -46,32 +27,33 @@ export default function Home() {
               help.
             </h1>
 
-            {/* Buttons */}
             <button
               type='button'
               className='btn w-fit gradient-blue gradient-hover ease-out duration-500'
             >
               Contact Us
             </button>
-            {/* end Buttons */}
           </div>
 
-          {/* Image */}
           <div className='rounded-md'>
             <Image src={img} passHref />
           </div>
-          {/* end Image */}
-          {/* end Hero */}
         </div>
       </div>
+      {/* end Hero */}
 
       {/* Content */}
-      <div className='container mx-auto max-w-lg mt-56 px-10 grid gap-6 grid-cols-1 md:grid-cols-2 md:max-w-screen-lg lg:grid-cols-3'>
+      <div className='container mx-auto max-w-lg my-56 px-10 grid gap-6 grid-cols-1 md:grid-cols-2 md:max-w-screen-lg lg:grid-cols-3'>
         <Card text={'Greetings'} />
         <Card text={'Hello'} />
         <Card text={'World'} />
         <Card text={'Goodbye'} />
+        <Card text={'Seeyah'} />
+        <Card text={'Tomrrow'} />
       </div>
+      {/* end Content */}
+
+      <Footer />
     </div>
   )
 }
