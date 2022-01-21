@@ -13,7 +13,7 @@ export default function Item({ text }) {
         </p>
 
         <div className='my-10'>
-          <Image src={img} />
+          <Image src={img} alt='placeholder' />
         </div>
 
         <button className='btn w-full btn-primary text- hover:bg-cyan-600 gradient-hover shadow-md drop-shadow-md ease-out duration-500'>

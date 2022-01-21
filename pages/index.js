@@ -38,7 +38,7 @@ export default function Home() {
           </div>
 
           <div className='scale-0 lg:scale-100 rounded-md'>
-            <Image src={img} />
+            <Image src={img} alt='placeholder' />
           </div>
         </div>
       </div>

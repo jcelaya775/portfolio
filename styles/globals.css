@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Prompt:wght@400;800&family=Roboto:wght@300&display=swap");
 @tailwind base;
 @layer base {
+  html {
+    height: 100%;
+    width: 100%;
+  }
   body {
     @apply bg-[#fff] text-zinc-700;
+    min-height: 100%;
   }
   h1 {
     @apply text-2xl;
@@ -34,10 +39,10 @@
 @tailwind utilities;
 @layer utilities {
   .btn {
-    @apply text-white font-bold rounded-[4px] py-[0.5em] px-[1em];
+    @apply font-bold rounded-[4px] py-[0.5em] px-[1em];
   }
   .btn-primary {
-    @apply bg-[#45b3e7] text-white;
+    @apply bg-[#45b3e7];
   }
   .gradient-blue {
     @apply bg-gradient-to-r from-green-400 to-blue-500;
