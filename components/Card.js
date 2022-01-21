@@ -9,7 +9,7 @@ export default function Item({ text }) {
         <h1 className='font-semibold'>{text}</h1>
 
         <p className='mt-2 text-[#ececec] italic'>
-          "This is a short description"
+          &quot;This is a short description&quot;
         </p>
 
         <div className='my-10'>
