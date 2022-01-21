@@ -29,7 +29,7 @@ export default function Home() {
 
             <button
               type='button'
-              className='btn w-fit gradient-blue gradient-hover ease-out duration-500'
+              className='btn w-fit btn-primary gradient-hover ease-out duration-500'
             >
               Contact Us
             </button>

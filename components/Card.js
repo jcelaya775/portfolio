@@ -16,7 +16,7 @@ export default function Item({ text }) {
           <Image src={img} />
         </div>
 
-        <button className='btn btn-primary text-[#f8f8f8] w-[calc(100%)]'>
+        <button className='btn gradient-blue text-[#f8f8f8] w-[calc(100%)]'>
           Button
         </button>
       </div>

@@ -14,7 +14,7 @@ export default function Sidebar() {
   return (
     <div
       id='wrapper'
-      className='absolute ease-in-out duration-500 z-10 py-32 h-full max-w-screen-sm w-[100%] bg-zinc-900 bg-opacity-95 backdrop-blur-lg'
+      className='absolute ease-in-out duration-500 z-10 py-32 h-full max-w-screen-sm w-[100%] bg-zinc-900 bg-opacity-90 backdrop-blur-lg'
     >
       <div className='flex flex-col justify-start items-start pl-[15%] text-white text-4xl font-robo'>
         {items.map((item, key) => (
