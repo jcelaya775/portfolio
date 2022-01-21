@@ -16,7 +16,7 @@ export default function Item({ text }) {
           <Image src={img} alt='placeholder' />
         </div>
 
-        <button className='btn w-full btn-primary text- hover:bg-cyan-600 gradient-hover shadow-md drop-shadow-md ease-out duration-500'>
+        <button className='btn w-full btn-primary text-[#f0f0f0] hover:bg-cyan-600 gradient-hover shadow-md drop-shadow-md ease-out duration-500'>
           Button
         </button>
       </div>

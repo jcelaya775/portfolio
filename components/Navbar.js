@@ -37,7 +37,7 @@ export default function Navbar() {
       <div className={`relative z-10`}>
         <Sidebar isActive={sidebar ? false : true} />
       </div>
-      <div className='fixed z-20 w-full h-16 bg-zinc-800 drop-shadow-2xl flex justify-center items-center px-10'>
+      <div className='fixed z-20 w-full h-16 bg-zinc-800 drop-shadow-2xl flex justify-center items-center px-20'>
         {/* Navbar items */}
         <div className='container flex justify-center items-center lg:max-w-screen-2xl sm:max-w-screen-md max-w-xs'>
           {/* Hamburger and Logo Container */}
