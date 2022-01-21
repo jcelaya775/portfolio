@@ -12,6 +12,9 @@ module.exports = {
         lato: ['Lato', 'sans-serif'],
         prompt: ['Prompt', 'sans-serif'],
       },
+      animation: {
+        'spin-slow': 'spin 1.2s linear infinite',
+      },
     },
   },
   darkMode: 'class',

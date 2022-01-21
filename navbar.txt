@@ -1,0 +1,52 @@
+  const toggleContainerRef = useRef()
+  const toggleRef = useRef()
+
+
+const themeToggle = (event) => {
+    event.preventDefault()
+    const container = toggleContainerRef.current
+
+    if (!toggleRef.current.classList.contains('dark')) {
+      // dark mode
+      toggleRef.current.classList.add('dark')
+      toggleRef.current.classList.remove('bg-zinc-900')
+      toggleRef.current.classList.add('bg-[#fff]')
+      container.classList.remove('bg-[#fff]')
+      container.classList.add('bg-zinc-900')
+
+      // move circle
+      toggleRef.current.classList.remove('translate-x-[-5]')
+      toggleRef.current.classList.add('translate-x-5')
+      // set state
+    } else {
+      // light mode
+      toggleRef.current.classList.remove('dark')
+      toggleRef.current.classList.remove('bg-[#fff]')
+      toggleRef.current.classList.add('bg-zinc-900')
+
+      container.classList.remove('bg-zinc-900')
+      container.classList.add('bg-[#fff]')
+
+      // move circle
+      toggleRef.current.classList.remove('translate-x-5')
+      toggleRef.current.classList.add('translate-x-[-5]')
+      // set state
+    }
+  }
+
+{/* Theme Toggle */}
+          {/* bg-slate-200 hover:opacity:20 */}
+          <div
+            ref={toggleContainerRef}
+            className='w-[4rem] h-10 mx-2 bg-[#fff] dark:bg-zinc-800 rounded-full flex items-center pl-[0.21rem] hover:cursor-pointer duration-300'
+          >
+            <div
+              ref={toggleRef}
+              className='w-7 h-7 rounded-full block bg-zinc-900 justify-center items-center ease-in-out duration-300 m-2'
+            >
+              {/* text-[#03024b] */}
+              {/* <WiDaySunny className='w-5 h-5 text- text-[#fff] text-transparent' /> */}
+              <div className='w-5 h-5 l-0 block text-[#fff] text-transparent'></div>
+            </div>
+          </div>
+          {/* end Theme toggle */}

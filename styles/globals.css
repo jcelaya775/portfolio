@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Prompt:wght@400;800&family=Roboto:wght@300&display=swap");
 @tailwind base;
 @layer base {
+  body {
+    @apply bg-[#fff] text-zinc-700;
+  }
   h1 {
     @apply text-2xl;
   }
@@ -16,31 +19,38 @@
 }
 
 @tailwind components;
+@layer components {
+  .toggle-checkbox:checked {
+    @apply right-0 border-green-400;
+    right: 0;
+    border-color: #68D391;
+  }
+  .toggle-checkbox:checked + .toggle-label {
+    @apply bg-green-400;
+    background-color: #68D391;
+  }
+}
+
 @tailwind utilities;
-/* #DB7093 */
-/* bg-transparent border-2 border-[#45b3e7] text-[#45b3e7] my-[0.5em]*/
-.btn {
-  @apply text-white font-bold rounded-[4px]  mx-[1em] py-[0.5em] px-[1em];
-}
-
-.btn-primary {
-  @apply bg-[#45b3e7] text-white;
-}
-
-.gradient-blue {
-  @apply bg-gradient-to-r from-green-400 to-blue-500;
-}
-
-.gradient-orange {
-  @apply bg-gradient-to-r from-pink-500 to-yellow-500;
-}
-
-.gradient-hover {
-  @apply hover:from-pink-500 hover:to-yellow-500;
-}
-
-.link {
-  text-decoration: none;
-  color: white;
+@layer utilities {
+  .btn {
+    @apply text-white font-bold rounded-[4px] py-[0.5em] px-[1em];
+  }
+  .btn-primary {
+    @apply bg-[#45b3e7] text-white;
+  }
+  .gradient-blue {
+    @apply bg-gradient-to-r from-green-400 to-blue-500;
+  }
+  .gradient-orange {
+    @apply bg-gradient-to-r from-pink-500 to-yellow-500;
+  }
+  .gradient-hover {
+    @apply hover:from-pink-500 hover:to-yellow-500;
+  }
+  .link {
+    text-decoration: none;
+    color: white;
+  }
 }
 /*# sourceMappingURL=globals.css.map */
