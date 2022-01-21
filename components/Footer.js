@@ -1,8 +1,13 @@
 import React from 'react'
 
+// TODO:
+// + add social media links (blog, youtube, github, linkedin)
+// + contact info & resume
+// scroll back up button
+
 export default function Footer() {
   return (
-    <div className='bg-zinc-900 text-[#f0f0f0] h-80'>
+    <div className='bg-zinc-800 text-[#f0f0f0] h-80'>
       <div className='container mx-auto py-24 text-center grid grid-cols-3'>
         <ul>
           <li>

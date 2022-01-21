@@ -52,5 +52,13 @@
     text-decoration: none;
     color: white;
   }
+  .example-appear {
+    opacity: 0.01;
+  }
+  .example-appear.example-appear-active {
+    opacity: 1;
+    -webkit-transition: opacity .5s ease-in;
+    transition: opacity .5s ease-in;
+  }
 }
 /*# sourceMappingURL=globals.css.map */
