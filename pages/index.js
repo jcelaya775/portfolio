@@ -22,11 +22,11 @@ export default function Home() {
 
             <h1 className='mt-6 mb-12 text-zinc-500 text-xl leading-8 font-normal font-robo'>
               I am a university student studying computer science and
-              mathematics. But more importantly, I am a lifelong learner who is
-              passionate about programming and development. While I have a
-              well-established set of skills, from databases to frontend web
-              development, I am always excited to tackle new challenges and
-              provide the highest level of work that I can.
+              mathematics. I love learning and improving my skills in
+              programming and development. While I have a well-established set
+              of skills, from databases to frontend web development, I am always
+              excited to tackle new challenges and provide the highest level of
+              work that I can.
             </h1>
 
             <button
