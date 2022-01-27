@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 const items = ['Home', 'About', 'Projects', 'Testimonials']
 
@@ -14,7 +15,7 @@ export default function Sidebar({ isActive }) {
         {items.map((item, key) => (
           <h1
             key={key}
-            className='p-2 hover:font-semibold hover:decoration-slice hover:cursor-pointer'
+            className='p-2  hover:cursor-pointer hover:text-emerald-600'
           >
             {item}
           </h1>

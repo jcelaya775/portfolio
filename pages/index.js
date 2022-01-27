@@ -8,14 +8,19 @@ import img from '../images/hero.jpg'
 
 export default function Home() {
   const theme = useSelector((state) => state.theme.value)
+  console.log(theme)
+  console.log(theme.secondary)
+
+  const color = 'bg-[' + theme.secondary + ']'
+  console.log(color)
 
   return (
     <div>
       {/* Hero */}
-      <div className='bg-slate-100 relative'>
+      <div className={`relative ${color}`}>
         <Navbar />
         <div className='mx-auto py-48 px-20 max-w-md grid grid-cols-1 gap-24 lg:grid-cols-2 md:max-w-screen-lg lg:max-w-screen-xl 2xl:max-w-screen-2xl'>
-          <div className='container flex flex-col justify-center max-w-screen-xl h-full bg-slate-100'>
+          <div className='container flex flex-col justify-center max-w-screen-xl h-full'>
             <h1 className='text-6xl text-zinc-700 inline-block font-robo font-bold'>
               Hi, I&apos;m Jorge
             </h1>

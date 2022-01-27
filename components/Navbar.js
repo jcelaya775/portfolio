@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Sidebar from './Sidebar'
-import { useTransition, animated } from 'react-spring'
 import Link from 'next/link'
 import Switch from './Switch'
 import { useSelector, useDispatch } from 'react-redux'
@@ -8,13 +7,23 @@ import { MdOutlineClose } from 'react-icons/md'
 
 export default function Navbar() {
   const [sidebar, setSidebar] = useState(false)
+  const theme = useSelector((theme) => state.theme.value)
   const dispatch = useDispatch()
   const burgerRef = useRef()
-  const transition = useTransition(sidebar, {
-    from: { x: -100 },
-    enter: { x: 100 },
-    leave: { x: -100 },
-  })
+
+  useEffect(() => {
+    if (darkMode) {
+      window.document.documentElement.classList.add('dark')
+      localStorage.setItem('vidyaDarkMode', 'true')
+    } else {
+      window.document.documentElement.classList.remove('dark')
+      localStorage.setItem('vidyaDarkMode', 'false')
+    }
+  }, [darkMode])
+
+  const onClick = () => {
+    setDarkMode(!darkMode)
+  }
 
   useEffect(() => {
     const burger = burgerRef.current
@@ -57,7 +66,7 @@ export default function Navbar() {
             ) : (
               <div
                 ref={burgerRef}
-                className='p-6 ease-out hover:cursor-pointer hover:animate-spin-slow duration-500'
+                className='p-6 ease-out hover:cursor-pointer animate-spin-slow duration-500'
               >
                 <MdOutlineClose id='exit' className='text-white w-8 h-8' />
               </div>

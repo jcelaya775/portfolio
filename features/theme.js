@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialStateValue = {
-  primary: '#001325',
-  secondary: 'palevioletred',
-  complementary: '#45b3e7',
+  primary: '#00f',
+  secondary: '#DB7093',
+  complementary: '#f00',
+  text: '#f0f0f0',
 }
 
 const themeSlice = createSlice({
@@ -11,6 +12,8 @@ const themeSlice = createSlice({
   initialState: { value: initialStateValue },
   reducers: {
     changeTheme: (state, action) => {
+      const colors = state.value
+      switch(colors)
       state.value = { ...action.payload }
     },
   },
