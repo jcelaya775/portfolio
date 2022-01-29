@@ -15,7 +15,7 @@ export default function Sidebar({ isActive }) {
         {items.map((item, key) => (
           <h1
             key={key}
-            className='p-2  hover:cursor-pointer hover:text-emerald-600'
+            className='p-2  hover:cursor-pointer hover:font-semibold'
           >
             {item}
           </h1>

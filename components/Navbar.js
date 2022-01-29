@@ -7,22 +7,22 @@ import { MdOutlineClose } from 'react-icons/md'
 
 export default function Navbar() {
   const [sidebar, setSidebar] = useState(false)
-  const theme = useSelector((theme) => state.theme.value)
+  const colorScheme = useSelector((state) => state.theme.value)
   const dispatch = useDispatch()
   const burgerRef = useRef()
 
-  useEffect(() => {
-    if (darkMode) {
-      window.document.documentElement.classList.add('dark')
-      localStorage.setItem('vidyaDarkMode', 'true')
-    } else {
-      window.document.documentElement.classList.remove('dark')
-      localStorage.setItem('vidyaDarkMode', 'false')
-    }
-  }, [darkMode])
+  // useEffect(() => {
+  //   if (darkMode) {
+  //     window.document.documentElement.classList.add('dark')
+  //     localStorage.setItem('vidyaDarkMode', 'true')
+  //   } else {
+  //     window.document.documentElement.classList.remove('dark')
+  //     localStorage.setItem('vidyaDarkMode', 'false')
+  //   }
+  // }, [darkMode])
 
   const onClick = () => {
-    setDarkMode(!darkMode)
+    useDispatch()
   }
 
   useEffect(() => {
